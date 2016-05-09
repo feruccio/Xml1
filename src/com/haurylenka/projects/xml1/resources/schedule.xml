@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schedule xmlns="http://www.example.org/schedule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/schedule schedule.xsd">
+    <itinerary number="AB1234">
+        <from>
+            <name>JFK</name>
+            <city>New York</city>
+        </from>
+        <to>
+            <name>Minsk2</name>
+            <city>Minsk</city>
+        </to>
+        <periodicity ordinal="1" type="day">
+            <departure>12:52:01</departure>
+            <arrival>21:52:01</arrival>
+            <nextDay>false</nextDay>
+            <gate>A2</gate>
+            <prices>
+                <price>
+                    <seatType>economy</seatType>
+                    <base>300</base>
+                </price>
+                <price>
+                    <seatType>business</seatType>
+                    <base>500</base>
+                </price>
+                <price>
+                    <seatType>first</seatType>
+                    <base>400</base>
+                </price>
+            </prices>
+        </periodicity>
+    </itinerary>
+    <itinerary number="AB1234">
+        <from>
+            <name>JFK</name>
+            <city>New York</city>
+        </from>
+        <to>
+            <name>Minsk2</name>
+            <city>Minsk</city>
+        </to>
+        <periodicity ordinal="1" type="day">
+            <departure>12:52:01</departure>
+            <arrival>21:52:01</arrival>
+            <nextDay>false</nextDay>
+            <gate>A2</gate>
+            <prices>
+                <price>
+                    <seatType>economy</seatType>
+                    <base>300</base>
+                </price>
+                <price>
+                    <seatType>business</seatType>
+                    <base>500</base>
+                </price>
+                <price>
+                    <seatType>first</seatType>
+                    <base>400</base>
+                </price>
+            </prices>
+        </periodicity>
+    </itinerary>
+</schedule>

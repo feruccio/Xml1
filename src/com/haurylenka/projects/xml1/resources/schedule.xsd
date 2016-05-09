@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/schedule" 
+	xmlns:tns="http://www.example.org/schedule" 
+	elementFormDefault="qualified">
+	
+	<element name="schedule">
+		<complexType>
+			<sequence maxOccurs="unbounded">
+				<element name="itinerary" type="tns:Itinerary"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<complexType name="Itinerary">
+		<sequence>
+			<element name="from" type="tns:Airport"></element>
+			<element name="to" type="tns:Airport"></element>
+			<element name="periodicity" type="tns:Periodicity"></element>
+		</sequence>
+		<attribute name="number" type="string"></attribute>
+	</complexType>
+	
+	<complexType name="Airport">
+		<sequence>
+			<element name="name" type="string"></element>
+			<element name="city" type="string"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Periodicity">
+		<sequence>
+			<element name="departure" type="time"></element>
+			<element name="arrival" type="time"></element>
+			<element name="nextDay" type="boolean"></element>
+			<element name="gate" type="string"></element>
+			<element name="prices" type="tns:Prices"></element>
+		</sequence>
+		<attribute name="type" type="tns:PeriodType"></attribute>
+		<attribute name="ordinal" type="positiveInteger"></attribute>
+	</complexType>
+	
+	<complexType name="Prices">
+		<sequence maxOccurs="unbounded">
+			<element name="price" type="tns:Price"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Price">
+		<sequence>
+			<element name="seatType" type="tns:SeatType"></element>
+			<element name="base" type="positiveInteger"></element>
+		</sequence>
+	</complexType>
+	
+	<simpleType name="SeatType">
+		<restriction base="string">
+			<enumeration value="economy"></enumeration>
+			<enumeration value="first"></enumeration>
+			<enumeration value="business"></enumeration>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="PeriodType">
+		<restriction base="string">
+			<enumeration value="minute"></enumeration>
+			<enumeration value="hour"></enumeration>
+			<enumeration value="day"></enumeration>
+			<enumeration value="week"></enumeration>
+			<enumeration value="fortnight"></enumeration>
+			<enumeration value="month"></enumeration>
+			<enumeration value="year"></enumeration>
+		</restriction>
+	</simpleType>
+	
+</schema>
